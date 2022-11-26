@@ -1,0 +1,129 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 10px;
+  color: #111;
+  box-shadow: -4px -3px 20px 1px rgb(0 0 0 / 15%);
+}
+
+.navbar ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+
+.navbar li {
+  padding: 0 10px;
+  padding: 0 auto;
+}
+
+.navbar li span {
+  cursor: pointer;
+}
+
+.navbar.dark {
+  background-color: rgb(29, 29, 29);
+  color: #fff;
+}
+
+.navbar button {
+  outline: none;
+  background-color: transparent;
+  color: rgb(253, 95, 4);
+  cursor: pointer;
+  border: none;
+}
+
+.navbar.dark button {
+  color: rgb(243, 243, 243);
+}
+
+.navbar span {
+  font-size: 20px;
+  line-height: 10px;
+}
+
+.span-burguer::before {
+  content: '';
+  background-color: #000;
+  width: 18px;
+  height: 2px;
+  margin-bottom: 5px;
+}
+
+.span-burguer::after {
+  content: '';
+  background-color: #000;
+  width: 18px;
+  height: 2px;
+}
+
+.dark .span-burguer::before,
+.dark .span-burguer::after {
+  background-color: #fff;
+}
+
+.span-burguer {
+  cursor: pointer;
+}
+
+@media (max-width:580px) {
+
+  .span-burguer::after,
+  .span-burguer::before {
+    display: block;
+    transition: .3s;
+    margin-right: 5px;
+  }
+
+  .span-burguer.active::after {
+    transform: rotate(45deg);
+    position: absolute;
+  }
+
+  .span-burguer.active::before {
+    transform: rotate(-45deg);
+    position: absolute;
+  }
+
+  .span-burguer.active::after,
+  .span-burguer.active::before {
+    right: 10px;
+    top: 38px;
+  }
+
+  #list {
+    display: none;
+  }
+
+  #list-active {
+    display: block;
+    position: absolute;
+    right: 1px;
+    top: 76px;
+    text-align: center;
+    background-color: #fff;
+    padding: 50px;
+  }
+
+  .dark #list-active{
+    background-color: #000;
+  }
+
+  #list-active li {
+    padding: 8px 0;
+  }
+
+  .active-burguer {
+    display: block;
+  }
+
+}
+
+@media (max-width:500px) {
+  #list-active{
+    top: 65px;
+  }
+}

@@ -1,0 +1,36 @@
+.perfil{
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  min-height: 80vh;
+  padding-bottom: 55px;
+}
+
+.perfil.dark{
+  background-color: #333;
+}
+
+.perfil form::placeholder{
+  color: white;
+}
+
+.perfil form h1{
+  font-size: 20px;
+  text-align: center;
+  padding-bottom: 0;
+}
+
+.perfil form img{
+  width: 150px;
+  border-radius: 50%;
+  padding: 30px 0px;
+}
+
+.perfil form input:disabled{
+  background-color: #fff;
+  color: #000;
+}
+
+.perfil form{
+  padding-bottom: 50px;
+}

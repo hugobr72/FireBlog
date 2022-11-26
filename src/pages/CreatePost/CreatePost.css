@@ -1,0 +1,15 @@
+.createPost {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 80px;
+}
+
+.createPost.dark{
+  background-color: #333;
+}
+
+.createPost form input{
+  margin: 6px 0;
+}

@@ -1,0 +1,11 @@
+.footer{
+  display: grid;
+  place-content: center;
+  min-height: 40vh;
+  box-shadow: -4px -3px 20px 1px rgb(0 0 0 / 15%);
+}
+
+.footer.dark{
+  background-color: rgb(29, 29, 29);
+  color: #fff;
+}

@@ -1,0 +1,126 @@
+* {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  opacity: 0.8;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+a:hover {
+  opacity: 1;
+}
+
+.dark a {
+  color: #e7e7e7;
+}
+
+.btn {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 85%;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.6) inset;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2) inset;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.btn.loading {
+  background-color: #e7e7e7;
+  color: black;
+}
+
+.btn.danger {
+  margin-top: 20px;
+  background-color: rgb(163, 51, 51);
+  color: #ccc;
+}
+
+form {
+  margin-top: 55px;
+  min-height: 60vh;
+  width: 500px;
+  background-color: #e7e7e7;
+  border-radius: 8px;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 55px;
+  box-shadow: 1px -1px 17px 6px rgb(168 168 168 / 60%);
+}
+
+form h1 {
+  padding-bottom: 55px;
+  font-size: 40px;
+}
+
+.register form h1 {
+  padding-bottom: 35px;
+}
+
+form p {
+  padding-top: 20px;
+  font-size: 15px;
+}
+
+form p a {
+  color: #4CAF50;
+  font-size: 15px;
+}
+
+form input {
+  outline: none;
+  width: 85%;
+  margin-top: 4px;
+  padding: 10px;
+  border: 1px solid #b2b2b2;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.6) inset;
+  box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.6) inset;
+}
+
+.dark form {
+  background-color: #222;
+  color: #e7e7e7;
+  box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.6)
+}
+
+@media (max-width:680px) {
+  form {
+    width: 80%;
+  }
+}
+
+@media (max-width:480px) {
+  h1 {
+    font-size: 25px;
+  }
+
+  form h1 {
+    font-size: 30px;
+  }
+
+  form p,
+  form p a,
+  .btn {
+    font-size: 12px;
+  }
+}
