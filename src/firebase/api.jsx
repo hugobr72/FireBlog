@@ -24,6 +24,5 @@ export const posts = async () => {
   const posts = docAsync.docs.map(doc => doc.data());
   return posts
 }
-posts()
 
 export default { db }
