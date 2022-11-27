@@ -96,6 +96,10 @@
   justify-items: center;
 }
 
+.register.dark{
+  background-color: #444444;
+}
+
 @media (max-width: 968px) {
   .home ul{
     display: flex;

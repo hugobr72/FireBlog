@@ -5,11 +5,13 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth'
 import {
   createUserWithEmailAndPassword as firebaseCreateUserWithEmailAndPassword, updateProfile
 } from 'firebase/auth';
+import { useSelector } from 'react-redux';
 
 const Register = () => {
   const [name, setName] = useState()
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
+  const { dark } = useSelector((state) => state.mode)
 
   const [
     createUserWithEmailAndPassword,
@@ -27,7 +29,7 @@ const Register = () => {
   }
 
   return (
-    <div className='register'>
+    <div className={!dark ? 'register dark' : 'register'}>
       <form onSubmit={handleSubmit}>
         <h1>Register</h1>
         <input type="text" onChange={(e) => setName(e.target.value)} placeholder='Name...' /><br />

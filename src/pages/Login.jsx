@@ -9,8 +9,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../slices/userSlice';
 import { Link, useNavigate } from 'react-router-dom';
 
-
 const Login = () => {
+  const { dark } = useSelector((state) => state.mode)
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
   const [errorMsg, setErrorMsg] = useState()
@@ -53,7 +53,7 @@ const Login = () => {
   }
 
   return (
-    <div className='register'>
+    <div className={!dark ? 'register dark' : 'register'}>
       <form onSubmit={handleSubmit}>
         <h1>Login</h1>
         <input type="email" onChange={(e) => setEmail(e.target.value)} placeholder='Email...' /><br />
