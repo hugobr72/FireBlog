@@ -8,9 +8,9 @@ const CreatePost = () => {
   const { user } = useSelector((state) => state.userData)
   const dark = useSelector((state) => state.mode.dark)
 
-  const [title, setTitle] = useState()
-  const [photo, setPhoto] = useState()
-  const [error, setError] = useState()
+  const [title, setTitle] = useState('')
+  const [photo, setPhoto] = useState('')
+  const [error, setError] = useState('')
   
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -47,9 +47,9 @@ const CreatePost = () => {
       <form onSubmit={handleSubmit} >
         <h1>Criar Post</h1>
         <label>Título do post:</label>
-        <input type="text" onChange={(e) => setTitle(e.target.value)} value={title} />
+        <input type="text" onChange={(e) => setTitle(e.target.value)} value={'' || title} />
         <label>Url da foto do post:</label>
-        <input type="text" onChange={(e) => setPhoto(e.target.value)} value={photo} />
+        <input type="text" onChange={(e) => setPhoto(e.target.value)} value={'' || photo} />
         <input type="submit" value="Criar Post" className='btn' />
         {error && <p className='btn danger'>{error}</p>}
       </form>
