@@ -32,18 +32,22 @@ const Home = () => {
   }
 
   const handleLike = async (e, index) => {
-    if(!user.displayName) return
-    let likes = postsData[index].likes
-    if (e.target.parentNode.parentNode.className === 'heart liked') {
-      likes = likes.filter(name => name !== user.displayName)
+    if (!user.displayName) return
+    try {
+      let likes = postsData[index].likes
+      if (e.target.parentNode.parentNode.className === 'heart liked') {
+        likes = likes.filter(name => name !== user.displayName)
+        const newData = await useLiked(index, likes)
+        setPostsData(newData)
+        return
+      }
+      likes.push(user.displayName)
       const newData = await useLiked(index, likes)
       setPostsData(newData)
       return
+    } catch (error) {
+      console.error(error)
     }
-    likes.push(user.displayName)
-    const newData = await useLiked(index, likes)
-    setPostsData(newData)
-    return
   }
 
   return (
