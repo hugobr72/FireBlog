@@ -6,7 +6,7 @@ const Footer = () => {
   const { dark } = useSelector((state) => state.mode)
   return (
     <div className={!dark ? 'footer dark' : 'footer'}>
-    <h3>Copyright ©2022</h3>
+    <h3>Copyright © 2022</h3>
     </div>
   )
 }
