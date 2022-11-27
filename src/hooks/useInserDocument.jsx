@@ -3,7 +3,8 @@ import { posts, ref } from '../firebase/api'
 
 const db = getFirestore()
 export const useLiked = async (index, array) => {
-  let dataPost = posts[index]
+  let dataPost = await posts()
+  dataPost = dataPost[index]
   dataPost.likes = array
   let idDoc = await getDocs(ref)
   idDoc = String(idDoc.docs[index].id)

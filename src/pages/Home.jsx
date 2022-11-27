@@ -33,7 +33,7 @@ const Home = () => {
 
   const handleLike = async (e, index) => {
     if(!user.displayName) return
-    let likes = posts[index].likes
+    let likes = postsData[index].likes
     if (e.target.parentNode.parentNode.className === 'heart liked') {
       likes = likes.filter(name => name !== user.displayName)
       const newData = await useLiked(index, likes)
