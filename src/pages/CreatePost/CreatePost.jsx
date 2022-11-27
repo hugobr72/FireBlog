@@ -22,6 +22,7 @@ const CreatePost = () => {
       title,
       photo
     }
+    console.log(post)
 
     if (!photo) {
       setError('Precisa ter uma foto com Url.')
