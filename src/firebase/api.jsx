@@ -17,9 +17,13 @@ export const auth = getAuth(app)
 
 const db = getFirestore(app);
 export const ref = collection(db, 'posts');
-const documents = await getDocs(ref).then(doc => doc).catch(err => err)
 
-const posts = documents.docs.map(doc => doc.data());
+export const posts = async () => {
+  const docAsync = await getDocs(ref)
 
-export { posts }
+  const posts = docAsync.docs.map(doc => doc.data());
+  return posts
+}
+posts()
+
 export default { db }

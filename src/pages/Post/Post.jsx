@@ -12,13 +12,15 @@ const Post = () => {
   const [postsData, setPostsData] = useState()
 
   useEffect(() => {
-    if (posts) {
-      const post = posts[id]
-      setPostsData(post)
+    const fethPosts = async () => {
+      if (posts) {
+        const docPosts = await posts()
+        setPostsData(docPosts[id])
+      }
     }
+    fethPosts()
   }, [posts])
-
-
+  
   const liked = (likes) => {
     if (likes) {
       const userLiked = likes.filter(like => like == user.displayName)

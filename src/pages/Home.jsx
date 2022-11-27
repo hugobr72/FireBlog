@@ -12,10 +12,15 @@ const Home = () => {
   const [postsData, setPostsData] = useState()
 
   useEffect(() => {
-    if (posts) {
-      setPostsData(posts)
+    const fethPosts = async () => {
+      if (posts) {
+        const docPosts = await posts()
+        setPostsData(docPosts)
+      }
     }
+    fethPosts()
   }, [posts])
+
 
   const liked = (likes) => {
     if (likes) {
