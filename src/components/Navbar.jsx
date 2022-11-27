@@ -20,8 +20,6 @@ const Navbar = () => {
   const { dark } = useSelector((state) => state.mode)
   const { toogle } = useSelector((state) => state)
   const user = useSelector((state) => state.userData)
-  console.log(toogleBurguer)
-
   return (
     <div className={!dark ? 'navbar dark' : 'navbar'}>
       <h1>FireBlog</h1>

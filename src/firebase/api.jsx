@@ -14,10 +14,12 @@ import {
 const app = initializeApp(firebaseConfig)
 export const auth = getAuth(app)
 
-const db = await getFirestore(app);
-export const ref = await collection(db, 'posts');
-const documents = await getDocs(ref)
-const posts = await documents.docs.map(doc => doc.data());
+
+const db = getFirestore(app);
+export const ref = collection(db, 'posts');
+const documents = await getDocs(ref).then(doc => doc).catch(err => err)
+
+const posts = documents.docs.map(doc => doc.data());
 
 export { posts }
 export default { db }
