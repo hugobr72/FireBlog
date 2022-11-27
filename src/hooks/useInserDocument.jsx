@@ -18,7 +18,7 @@ export const useLiked = async (index, array) => {
 }
 
 export const postCreate = async (data) => {
-  const dbRef = collection(db, 'posts')
+  const dbRef = await collection(db, 'posts')
   await addDoc(dbRef, data)
     .then(docRef => {
     })
