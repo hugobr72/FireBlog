@@ -3,11 +3,12 @@ import { useSelector } from 'react-redux'
 import './CreatePost.css'
 import { doc, getFirestore, setDoc, Timestamp } from "firebase/firestore";
 import { postCreate } from '../../hooks/useInserDocument';
+import { useNavigate } from 'react-router-dom';
 
 const CreatePost = () => {
   const { user } = useSelector((state) => state.userData)
   const dark = useSelector((state) => state.mode.dark)
-
+  const navigate = useNavigate()
   const [title, setTitle] = useState('')
   const [photo, setPhoto] = useState('')
   const [error, setError] = useState('')
@@ -22,7 +23,11 @@ const CreatePost = () => {
       title,
       photo
     }
-    console.log(post)
+
+    if (!user.photoURL) {
+      setError('Precisa ter uma foto de perfil.')
+      return
+    }
 
     if (!photo) {
       setError('Precisa ter uma foto com Url.')
@@ -40,7 +45,8 @@ const CreatePost = () => {
       setError('A Foto precisa ser uma url.')
       return
     }
-    postCreate(post)
+    await postCreate(post)
+    navigate('/')
   };
 
   return (
