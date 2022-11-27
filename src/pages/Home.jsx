@@ -30,13 +30,12 @@ const Home = () => {
         return false
       }
     } catch (error) {
-      console.error(error)
+      
     }
 
   }
 
   const handleLike = async (e, index) => {
-    
     try {
       if (!user.displayName) return
       let likes = postsData[index].likes
@@ -51,7 +50,7 @@ const Home = () => {
       setPostsData(newData)
       return
     } catch (error) {
-      console.error(error)
+      
     }
   }
 
