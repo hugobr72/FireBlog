@@ -21,10 +21,9 @@ export const postCreate = async (data) => {
   const dbRef = await collection(db, 'posts')
   await addDoc(dbRef, data)
     .then(docRef => {
-      console.log(docRef)
     })
     .catch(error => {
-      console.log(data)
+
       console.log(error);
     })
 }
