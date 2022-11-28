@@ -22,7 +22,18 @@ const Home = () => {
   }, [posts])
 
 
-  
+  const liked = (likes) => {
+    try {
+      if (likes) {
+        const userLiked = likes.filter(like => like == user.displayName)
+        if (userLiked.length !== 0) return true
+        return false
+      }
+    } catch (error) {
+      
+    }
+
+  }
 
   const handleLike = async (e, index) => {
     try {
