@@ -10,7 +10,7 @@ export const useLiked = async (index, array) => {
   idDoc = String(idDoc.docs[index].id)
   const docRef = doc(db, 'posts', idDoc)
   await updateDoc(docRef, dataPost)
-    .then((doc) => console.log(doc))
+    .then((doc) => console.log('deu certo'))
     .catch((err) => posts)
   const documents = await getDocs(ref)
   const newPosts = await documents.docs.map(doc => doc.data());
