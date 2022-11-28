@@ -34,7 +34,7 @@ function App() {
           <Route path='/login' element={!user.user ? <Login /> : <Navigate to='/' />} />
           <Route path='/user/:uid' element={user.user && <Perfil />} />
           <Route path='/create-post' element={user.user && <CreatePost />} />
-          <Route path='/post/:id' element={user.user && <Post />} />
+          <Route path='/post/:id' element={<Post />} />
         </Routes>
         <Footer />
       </BrowserRouter>
