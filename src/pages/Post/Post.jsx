@@ -20,12 +20,16 @@ const Post = () => {
     }
     fethPosts()
   }, [posts])
-  
+
   const liked = (likes) => {
-    if (likes) {
-      const userLiked = likes.filter(like => like == user.displayName)
-      if (userLiked.length !== 0) return true
-      return false
+    try {
+      if (likes) {
+        const userLiked = likes.filter(like => like == user.displayName)
+        if (userLiked.length !== 0) return true
+        return false
+      }
+    } catch (error) {
+
     }
 
   }
