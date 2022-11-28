@@ -19,7 +19,7 @@ const db = getFirestore(app);
 export const ref = collection(db, 'posts');
 
 export const posts = async () => {
-  const docAsync = await getDocs(ref)
+  const docAsync = await getDocs(ref, orderBy("createdAt", "desc"))
 
   const posts = docAsync.docs.map(doc => doc.data());
   return posts
