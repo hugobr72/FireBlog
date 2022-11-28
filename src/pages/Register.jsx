@@ -25,7 +25,6 @@ const Register = () => {
     e.preventDefault();
     const { user } = await createUserWithEmailAndPassword(email, password)
     await updateProfile(user, { displayName })
-    console.log(user);
   }
 
   return (
